@@ -2,6 +2,7 @@
     <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&text=Projeto%20Restaurante&reversal=false">
 </div>
 
+
 # 🌐 Projeto Restaurante
 ### 📊 Repository Stats
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
