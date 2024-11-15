@@ -1,16 +1,22 @@
 package models;
 
-public class Pratos{
+public class Pratos {
     private int id;
     private String nome;
     private String descricao;
     private float preco;
 
-    public Pratos(){
+    public Pratos() {
     }
 
     public Pratos(int id, String nome, String descricao, float preco) {
         this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+    }
+
+    public Pratos(String nome, String descricao, float preco) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
