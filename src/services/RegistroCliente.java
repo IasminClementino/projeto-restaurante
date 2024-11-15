@@ -1,8 +1,10 @@
 package services;
 
 import java.util.Scanner;
+import gui.MenuCliente;
 import models.Cliente;
 import treatments.Limpeza;
+import repository.RepositorioClientes;
 
 public class RegistroCliente {
     public static void registro() throws InterruptedException {
@@ -34,11 +36,11 @@ public class RegistroCliente {
         String cpf = sc.nextLine();
 
         Cliente cliente = new Cliente(nome, email, telefone, senha, rua, bairro, cpf);
-        System.out.println(cliente.toString());
+        RepositorioClientes repositorioCliente = new RepositorioClientes();
+        repositorioCliente.addCliente(cliente);
 
         System.out.println("Usuário registrado com sucesso!");
         Thread.sleep(1000);
-        sc.close();
-
+        MenuCliente.menuCliente(cliente);
     }
 }
