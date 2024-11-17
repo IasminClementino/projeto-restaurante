@@ -1,4 +1,4 @@
- <div align="center" text-align="center">
+<div align="center" text-align="center">
     <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&text=Projeto%20Restaurante&reversal=false">
 </div>
 
@@ -11,15 +11,24 @@
 </br>
 
 ## 🎯 Descrição:
-**O foco desta atividade é aprimorar as classes com múltiplos construtores, métodos de acesso (`get e set`), e pelo menos uma relação de herança entre as classes.**
+**Este projeto é um sistema de gerenciamento de restaurante que permite aos clientes registrar-se, fazer login, visualizar pratos, comprar pratos e ver suas compras. Administradores podem adicionar, remover e listar pratos, além de gerenciar clientes.**
 
-  ### 🔍 Principais Conceitos:
-  - Construtores: Implementação de mais de um construtor para cada classe.
-  - Métodos Getters e Setters: Criar métodos de acesso e modificação para todos os atributos.
-  - Herança: Aplicar herança entre classes para reutilizar código e compartilhar características comuns.
+  ### 🔍 Principais Funcionalidades:
+  - Registro e login de clientes.
+  - Visualização e compra de pratos.
+  - Visualização de compras realizadas.
+  - Adição, remoção e listagem de pratos por administradores.
+  - Gerenciamento de clientes por administradores.
 
   ### 📂 Estrutura do Repositório
-  `/src` : Código fonte das atividades.
+  - `/src` : Código fonte do projeto.
+    - `/models` : Classes de modelo que representam os dados.
+    - `/services` : Classes de serviço que contêm a lógica de negócios.
+    - `/repository` : Classes de repositório que gerenciam a persistência de dados.
+    - `/gui` : Classes de interface gráfica do usuário.
+    - `/treatments` : Classes de tratamento de exceções e outras utilidades.
+  - `/LICENSE` : Arquivo de licença do projeto.
+  - `/README.md` : Arquivo de documentação do projeto.
 
 </br>
 
