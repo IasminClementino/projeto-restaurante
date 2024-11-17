@@ -13,7 +13,7 @@ public class VerCompras {
         this.repositorioPedidos = repositorioPedidos;
     }
 
-    public void verCompras(Cliente cliente) throws InterruptedException {
+    public void verCompras(Cliente cliente, Scanner sc) throws InterruptedException {
         System.out.println("Compras realizadas:\n");
         for (Pedidos pedido : repositorioPedidos.getPedidosList()) {
             if (pedido.getCliente().equals(cliente)) {
@@ -22,8 +22,7 @@ public class VerCompras {
         }
 
         System.out.print("\nPressione Enter para voltar ao menu anterior.");
-        Scanner temp = new Scanner(System.in);
-        temp.nextLine();
-        MenuCliente.menuCliente(cliente);
+        sc.nextLine();
+        MenuCliente.menuCliente(cliente, sc);
     }
 }

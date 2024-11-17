@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import gui.MenuLogin;
 import treatments.Limpeza;
 
@@ -6,7 +8,9 @@ public class Main {
         System.out.println("Bem-vindo ao Sistema de Restaurante");
         System.out.println("By Maria Iasmin Clementino da Silva");
         Thread.sleep(3000);
+        Scanner sc = new Scanner(System.in);
         Limpeza.clear();
-        MenuLogin.menuLogin();
+        MenuLogin.menuLogin(sc);
+        sc.close();
     }
 }

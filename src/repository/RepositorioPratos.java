@@ -3,7 +3,7 @@ package repository;
 import models.Pratos;
 import java.util.ArrayList;
 
-public class RepositorioPratos {
+public class RepositorioPratos implements interfaces.InterfacePratos {
     private ArrayList<Pratos> pratosList;
 
     public RepositorioPratos() {

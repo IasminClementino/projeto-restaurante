@@ -2,8 +2,9 @@ package repository;
 
 import models.Cliente;
 import java.util.ArrayList;
+import interfaces.InterfaceClientes;
 
-public class RepositorioClientes {
+public class RepositorioClientes implements InterfaceClientes {
     private ArrayList<Cliente> clienteList;
 
     public RepositorioClientes() {

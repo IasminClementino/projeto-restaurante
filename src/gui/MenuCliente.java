@@ -11,9 +11,8 @@ import services.VerCompras;
 import repository.RepositorioPedidos;
 
 public class MenuCliente {
-    public static void menuCliente(Cliente cliente) throws InterruptedException {
+    public static void menuCliente(Cliente cliente, Scanner sc) throws InterruptedException {
         Limpeza.clear();
-        Scanner sc = new Scanner(System.in);
         System.out.println("Menu do Cliente\n");
         System.out.println("1. Ver Pratos");
         System.out.println("2. comprar Pratos");
@@ -34,21 +33,21 @@ public class MenuCliente {
 
         switch (opcao) {
             case "1":
-                listarPratos.listar();
+                listarPratos.listar(sc);
                 Thread.sleep(2000);
-                menuCliente(cliente);
+                menuCliente(cliente, sc);
                 break;
             case "2":
-                comprarPratos.comprarPrato(cliente);
+                comprarPratos.comprarPrato(cliente, sc);
                 break;
             case "3":
-                verCompras.verCompras(cliente);
+                verCompras.verCompras(cliente, sc);
                 break;
             case "4":
-                DadosdoCliente.dadosDoCliente(cliente);
+                DadosdoCliente.dadosDoCliente(cliente, sc);
                 break;
             case "5":
-                MenuLogin.menuLogin();
+                MenuLogin.menuLogin(sc);
                 return;
             case "6":
                 System.out.println("Volte sempre!");
@@ -60,7 +59,7 @@ public class MenuCliente {
             default:
                 System.out.println("Opção inválida. Tente novamente.");
                 Thread.sleep(1000);
-                menuCliente(cliente);
+                menuCliente(cliente, sc);
                 break;
         }
         

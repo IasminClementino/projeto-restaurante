@@ -3,7 +3,7 @@ package repository;
 import models.Pedidos;
 import java.util.ArrayList;
 
-public class RepositorioPedidos {
+public class RepositorioPedidos implements interfaces.InterfacePedidos {
     private ArrayList<Pedidos> pedidosList;
 
     public RepositorioPedidos() {
@@ -21,4 +21,5 @@ public class RepositorioPedidos {
     public ArrayList<Pedidos> getPedidosList() {
         return pedidosList;
     }
+
 }

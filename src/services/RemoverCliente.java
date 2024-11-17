@@ -12,8 +12,7 @@ public class RemoverCliente {
         this.repositorio = repositorio;
     }
 
-    public void remover() {
-        Scanner sc = new Scanner(System.in);
+    public void remover(Scanner sc) {
         System.out.println("Digite o CPF do cliente a ser removido:");
         String cpf = sc.nextLine();
         Cliente cliente = repositorio.findClienteByCpf(cpf);

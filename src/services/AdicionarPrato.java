@@ -4,7 +4,6 @@ import gui.MenuAdministracao;
 import repository.RepositorioPratos;
 import models.Pratos;
 import treatments.Exceptions;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,8 +15,7 @@ public class AdicionarPrato {
         this.repositorio = repositorio;
     }
 
-    public void adicionar() throws InterruptedException {
-        Scanner sc = new Scanner(System.in);
+    public void adicionar(Scanner sc) throws InterruptedException {
         System.out.print("Digite o nome do prato: ");
         String nomePrato = sc.nextLine();
         System.out.print("Digite a descrição do prato: ");
@@ -29,7 +27,7 @@ public class AdicionarPrato {
         } catch (InputMismatchException e) {
             Exceptions.valorInvalido();
             Thread.sleep(1500);
-            MenuAdministracao.administracao();
+            MenuAdministracao.administracao(sc);
         }
         Pratos novoPrato = new Pratos(nextId++, nomePrato, descricaoPrato, precoPrato);
         repositorio.addPrato(novoPrato);

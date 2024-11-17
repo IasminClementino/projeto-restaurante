@@ -6,7 +6,6 @@ import models.Pratos;
 import repository.RepositorioPedidos;
 import repository.RepositorioPratos;
 import treatments.Exceptions;
-
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
@@ -21,15 +20,15 @@ public class ComprarPratos {
     this.repositorioPedidos = repositorioPedidos;
   }
 
-  public void comprarPrato(Cliente cliente) throws InterruptedException {
-    Scanner sc = new Scanner(System.in);
+  public void comprarPrato(Cliente cliente, Scanner sc) throws InterruptedException {
     System.out.println("Digite o ID do prato que deseja comprar: ");
     int pratoId = 0;
     try {
       pratoId = sc.nextInt();
+      sc.nextLine();
     } catch (Exception e) {
       Exceptions.valorInvalido();
-      comprarPrato(cliente);
+      comprarPrato(cliente, sc);
     }
     
 
@@ -43,7 +42,7 @@ public class ComprarPratos {
     }
 
     Thread.sleep(2000);
-    MenuCliente.menuCliente(cliente);
+    MenuCliente.menuCliente(cliente, sc);
     
   }
 }

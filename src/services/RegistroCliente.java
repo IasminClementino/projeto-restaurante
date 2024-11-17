@@ -7,9 +7,8 @@ import treatments.Limpeza;
 import repository.RepositorioClientes;
 
 public class RegistroCliente {
-    public static void registro() throws InterruptedException {
+    public static void registro(Scanner sc) throws InterruptedException {
         Limpeza.clear();
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("Registro de Usuário\n");
         Thread.sleep(1500);
@@ -41,6 +40,6 @@ public class RegistroCliente {
 
         System.out.println("Usuário registrado com sucesso!");
         Thread.sleep(1000);
-        MenuCliente.menuCliente(cliente);
+        MenuCliente.menuCliente(cliente, sc);
     }
 }

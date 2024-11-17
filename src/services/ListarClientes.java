@@ -12,7 +12,7 @@ public class ListarClientes {
         this.repositorio = repositorio;
     }
 
-    public void listar() throws InterruptedException {
+    public void listar(Scanner sc) throws InterruptedException {
         System.out.println("Lista de Clientes\n");
         Thread.sleep(1000);
         repositorio.getClienteList().forEach(cliente -> {
@@ -26,7 +26,6 @@ public class ListarClientes {
         });
 
         System.out.print("\nPressione Enter para voltar ao menu anterior.");
-        Scanner temp = new Scanner(System.in);
-        temp.nextLine();
+        sc.nextLine();
     }
 }

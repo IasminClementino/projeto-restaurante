@@ -6,9 +6,9 @@ import services.RegistroCliente;
 import treatments.Limpeza;
 
 public class MenuLogin {
-    public static void menuLogin() throws InterruptedException {
+    public static void menuLogin(Scanner sc) throws InterruptedException {
         Limpeza.clear();
-        Scanner sc = new Scanner(System.in);
+
         System.out.println("Bem-Vindo ao Restaurante\n");
         Thread.sleep(2000);
         System.out.println("selecione uma opção:");
@@ -21,13 +21,13 @@ public class MenuLogin {
 
         switch (opcao) {
             case "1":
-                LoginCliente.login();
+                LoginCliente.login(sc);
                 break;
             case "2":
-                RegistroCliente.registro();
+                RegistroCliente.registro(sc);
                 break;
             case "3":
-                MenuAdministracao.administracao();
+                MenuAdministracao.administracao(sc);
                 break;
             case "4":
                 System.out.println("Volte sempre!");
@@ -39,7 +39,7 @@ public class MenuLogin {
             default:
                 System.out.println("Opção inválida. Tente novamente.");
                 Thread.sleep(1000);
-                menuLogin();
+                menuLogin(sc);
                 break;
         }
     }

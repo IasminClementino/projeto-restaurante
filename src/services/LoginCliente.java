@@ -8,9 +8,8 @@ import java.util.Scanner;
 import gui.MenuCliente;
 
 public class LoginCliente {
-    public static void login() throws InterruptedException {
+    public static void login(Scanner sc) throws InterruptedException {
         Limpeza.clear();
-        Scanner sc = new Scanner(System.in);
         System.out.println("Login de Cliente\n");
         Thread.sleep(1500);
 
@@ -27,14 +26,14 @@ public class LoginCliente {
             if (cliente.getEmail().equals(email) && cliente.getSenha().equals(senha)) {
                 System.out.println("Login realizado com sucesso!");
                 loginSuccessful = true;
-                MenuCliente.menuCliente(cliente);
+                MenuCliente.menuCliente(cliente, sc);
                 break;
             }
         }
 
         if (!loginSuccessful) {
             System.out.println("Email ou senha incorretos. Tente novamente.");
-            MenuLogin.menuLogin();
+            MenuLogin.menuLogin(sc);
         }
 
     }

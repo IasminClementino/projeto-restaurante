@@ -11,9 +11,8 @@ import services.RemoverCliente;
 import services.ListarClientes;
 
 public class MenuAdministracao {
-    public static void administracao() throws InterruptedException {
+    public static void administracao(Scanner sc) throws InterruptedException {
         Limpeza.clear();
-        Scanner sc = new Scanner(System.in);
         RepositorioPratos repositorio = new RepositorioPratos();
         AdicionarPrato adicionarPrato = new AdicionarPrato(repositorio);
         RemoverPrato removerPrato = new RemoverPrato(repositorio);
@@ -35,27 +34,27 @@ public class MenuAdministracao {
 
         switch (opcao) {
             case "1":
-                adicionarPrato.adicionar();
-                administracao();
+                adicionarPrato.adicionar(sc);
+                administracao(sc);
                 break;
             case "2":
-                removerPrato.remover();
-                administracao();
+                removerPrato.remover(sc);
+                administracao(sc);
                 break;
             case "3":
-                listarPratos.listar();
-                administracao();
+                listarPratos.listar(sc);
+                administracao(sc);
                 break;
             case "4":
-                removerCliente.remover();
-                administracao();
+                removerCliente.remover(sc);
+                administracao(sc);
                 break;
             case "5":
-                listarClientes.listar();
-                administracao();
+                listarClientes.listar(sc);
+                administracao(sc);
                 break;
             case "6":
-                MenuLogin.menuLogin();
+                MenuLogin.menuLogin(sc);
                 break;
             case "7":
                 System.out.println("Volte sempre!");
@@ -66,7 +65,7 @@ public class MenuAdministracao {
             default:
                 System.out.println("Opção inválida. Tente novamente.");
                 Thread.sleep(1000);
-                administracao();
+                administracao(sc);
                 break;
         }
         sc.close();
